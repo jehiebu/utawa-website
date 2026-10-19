@@ -161,6 +161,22 @@ nav a:hover {
     color: var(--pink);
 }
 
+/* Mobile menu button - hidden on desktop */
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: var(--brown);
+
+    font-size: 28px;
+    line-height: 1;
+
+    padding: 6px 8px;
+    cursor: pointer;
+}
+
 
 /* ==================== 5. Buttons ==================== */
 button {
@@ -414,6 +430,68 @@ footer {
 }
 
 @media (max-width: 800px) {
+    header {
+        position: relative;
+
+        padding: 16px 20px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .club-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .brand h1 {
+        font-size: 19px;
+    }
+
+    /* Show hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide navigation until hamburger is clicked */
+    nav {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        gap: 0;
+
+        background-color: var(--background);
+
+        border-top: 1px solid #f0ded9;
+        border-bottom: 1px solid #f0ded9;
+
+        box-shadow: 0 8px 18px rgba(89, 71, 61, 0.08);
+
+        z-index: 1000;
+    }
+
+    /* JavaScript adds this class */
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 14px 24px;
+
+        border-bottom: 1px solid #f3e7e3;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
     #home {
         grid-template-columns: 1fr;
         gap: 40px;

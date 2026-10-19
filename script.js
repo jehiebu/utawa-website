@@ -1,5 +1,27 @@
-const button = document.getElementById("joinButton");
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.querySelector("nav");
+const navLinks = document.querySelectorAll("nav a");
 
-button.addEventListener("click", function () {
-    alert("Thank you for your interest in joining!");
+
+menuButton.addEventListener("click", function () {
+
+    navigation.classList.toggle("open");
+
+    const menuIsOpen = navigation.classList.contains("open");
+
+    menuButton.setAttribute("aria-expanded", menuIsOpen);
+
+});
+
+
+navLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        navigation.classList.remove("open");
+
+        menuButton.setAttribute("aria-expanded", "false");
+
+    });
+
 });
