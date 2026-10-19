@@ -1,0 +1,453 @@
+/* ============================================================
+   UTAWA Website Styles
+   Organized by: theme -> base -> components -> sections -> responsive
+   ============================================================ */
+
+/* ==================== 1. Theme / Color Palette ==================== */
+:root {
+    --background: #fff9f7;
+    --cream: #fff6ed;
+
+    --brown: #59473d;
+    --text: #5f514a;
+
+    --pink: #ef8173;
+    --pink-dark: #dc6f62;
+    --pink-light: #fde9e6;
+
+    --green: #73825d;
+    --green-light: #edf0e7;
+
+    --card: #ffffff;
+
+    /* Section backgrounds */
+    --section-hero: #fff4f1;
+    --section-about: #fffaf2;
+    --section-green: #f3f6ed;
+    --section-team: #fff1ee;
+}
+
+
+/* ==================== 2. Base Page Styles ==================== */
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    background-color: var(--background);
+    color: #51443e;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 64px 0;
+}
+
+/*
+   The main content is centered and limited to 1100px, but these section
+   backgrounds are extended to the full browser width with a full-bleed
+   box-shadow. This changes only the background, not the section layout.
+*/
+#home,
+#about,
+#what-we-do,
+#events,
+#team,
+#join {
+    box-shadow: 0 0 0 100vmax var(--section-background);
+    clip-path: inset(0 -100vmax);
+    background-color: var(--section-background);
+}
+
+#home {
+    --section-background: var(--section-hero);
+}
+
+#about {
+    --section-background: var(--section-about);
+}
+
+#what-we-do {
+    --section-background: var(--section-green);
+}
+
+#events {
+    --section-background: var(--section-green);
+}
+
+#team {
+    --section-background: var(--section-about);
+}
+
+#join {
+    --section-background: var(--section-hero);
+}
+
+
+/* ==================== 3. Typography ==================== */
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    font-family: "Fredoka", sans-serif;
+    color: var(--brown);
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+p {
+    color: var(--text);
+    line-height: 1.8;
+}
+
+
+/* ==================== 4. Header / Navigation ==================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.club-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    font-family: "Nunito", sans-serif;
+    color: var(--brown);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+
+/* ==================== 5. Buttons ==================== */
+button {
+    background-color: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 13px 24px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: var(--pink-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ==================== 6. Shared Card Styles ==================== */
+.team-card,
+.event-card,
+.what-we-do-card {
+    background-color: var(--card);
+    border: 1px solid #f0ded9;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 8px 24px rgba(89, 71, 61, 0.06);
+    flex: 1;
+}
+
+
+/* ==================== 7. Hero Section ==================== */
+#home {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 80px 30px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.home-container {
+    max-width: 620px;
+}
+
+#home h2 {
+    font-size: 58px;
+    line-height: 1.08;
+    margin-bottom: 24px;
+}
+
+#home p {
+    font-size: 19px;
+    max-width: 590px;
+    margin-bottom: 30px;
+}
+
+.home-art img {
+    width: 100%;
+    max-width: 430px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* ==================== 8. Decorative Divider ==================== */
+.pet-divider {
+    max-width: 1100px;
+    height: 130px;
+    margin: 30px auto 40px;
+    padding: 0 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.pet-divider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+/* ==================== 9. What We Do Section ==================== */
+.what-we-do-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.what-we-do-card {
+    transition: transform 0.2s;
+}
+
+.what-we-do-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ==================== 10. Events Section ==================== */
+.events-container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+
+/* ==================== 11. Executive Team Section ==================== */
+.team-container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.team-card h3 {
+    text-align: center;
+}
+
+.team-role {
+    margin-top: -8px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    color: var(--pink);
+    text-align: center;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+
+/* ==================== 12. Get Involved Section ==================== */
+.join-section {
+    position: relative;
+    min-height: 300px;
+}
+
+#join {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 30px;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    align-items: center;
+    gap: 50px;
+}
+
+.join-content {
+    max-width: 520px;
+}
+
+.join-art {
+    width: 440px;
+    height: 370px;
+    position: relative;
+    overflow: hidden;
+    justify-self: end;
+}
+
+.join-art img {
+    position: absolute;
+    width: 520px;
+    max-width: none;
+    right: 0;
+    bottom: 0;
+}
+
+
+/* ==================== 13. Footer ==================== */
+footer {
+    background-color: #fff1ee;
+    border-top: 1px solid #f0ded9;
+    padding: 50px 30px 20px;
+    font-family: "Nunito", sans-serif;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.footer-brand {
+    max-width: 520px;
+}
+
+.footer-brand h3,
+.footer-links h3 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-family: "Fredoka", sans-serif;
+    color: var(--brown);
+}
+
+.footer-brand p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: var(--brown);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: var(--pink);
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 35px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid #efd9d4;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #8a746a;
+}
+
+
+/* ==================== 14. Responsive Layout ==================== */
+@media (max-width: 900px) {
+    .what-we-do-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    #home {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 60px;
+    }
+
+    #home h2 {
+        font-size: 42px;
+    }
+
+    .home-art {
+        order: -1;
+    }
+
+    .home-art img {
+        max-width: 300px;
+    }
+
+    #join {
+        grid-template-columns: 1fr;
+    }
+
+    .join-art {
+        width: 360px;
+        height: 320px;
+        justify-self: center;
+    }
+
+    .join-art img {
+        width: 460px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
